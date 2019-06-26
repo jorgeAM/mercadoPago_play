@@ -1,4 +1,4 @@
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser')
 const express = require('express')
 const mongoose = require('mongoose')
 const customerRoutes = require('./routes/customer')
@@ -11,6 +11,7 @@ const db = mongoose.connection
 const mongoURL = process.env.MONGO_URL || 'mongodb://localhost/idPay'
 
 mongoose.connect(mongoURL, {useNewUrlParser: true});
+mongoose.set('useCreateIndex', true);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

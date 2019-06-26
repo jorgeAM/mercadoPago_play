@@ -11,7 +11,7 @@ const createCustomer =  async data => {
 }
 
 const createCard =  async data => {
-    return mercadopago.customers.save(data)
+    return mercadopago.customers.cards.create(data)
 }
 
 module.exports = {
